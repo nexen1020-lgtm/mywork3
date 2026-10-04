@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="공강 시간에 할 일을 자동으로 배치해 주는 시간 관리 웹, 공강 매니저">
+  <title>공강 매니저 | 1학년 개발자 포트폴리오</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <p class="logo">공강 매니저</p>
+      <nav aria-label="주 메뉴">
+        <ul class="nav-list">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h1 id="about-title">공강이 생겨도 뭘 할지 막막했던 경험에서 시작했어요.</h1>
+        <p class="lead">
+          안녕하세요, 1학년 개발자입니다. 수업 사이 애매한 시간을 흘려보내고 후회한 적이 많아서,
+          시간표와 할 일을 넣으면 공강에 자동으로 배치해 주는 웹을 만들었어요.
+        </p>
+        <h2>사용 방법</h2>
+        <ol class="steps">
+          <li>시간표에 수업을 추가해요.</li>
+          <li>해야 할 일과 예상 소요시간을 추가해요.</li>
+          <li>“자동 배치”를 누르면 공강 시간에 할 일이 채워져요.</li>
+        </ol>
+        <ul class="skill-list" aria-label="사용 기술">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">프로젝트: 공강 매니저</h2>
+
+        <div class="input-grid">
+          <article class="card" aria-labelledby="class-title">
+            <h3 id="class-title">1. 시간표 입력</h3>
+            <form id="class-form">
+              <div class="field"><label for="c-name">과목명</label>
+                <input id="c-name" required maxlength="20"></div>
+              <div class="field"><label for="c-day">요일</label>
+                <select id="c-day">
+                  <option value="0">월</option><option value="1">화</option><option value="2">수</option>
+                  <option value="3">목</option><option value="4">금</option>
+                </select></div>
+              <div class="field"><label for="c-start">시작</label>
+                <input id="c-start" type="time" value="10:00" required></div>
+              <div class="field"><label for="c-end">종료</label>
+                <input id="c-end" type="time" value="12:00" required></div>
+              <button type="submit">수업 추가</button>
+            </form>
+            <ul id="class-list" class="item-list"></ul>
+          </article>
+
+          <article class="card" aria-labelledby="task-title">
+            <h3 id="task-title">2. 할 일 입력</h3>
+            <form id="task-form">
+              <div class="field"><label for="t-name">할 일</label>
+                <input id="t-name" required maxlength="30"></div>
+              <div class="field"><label for="t-min">예상 시간(분)</label>
+                <input id="t-min" type="number" min="10" step="5" value="60" required></div>
+              <div class="field"><label for="t-due">마감일</label>
+                <input id="t-due" type="date"></div>
+              <div class="field"><label for="t-pri">중요도</label>
+                <select id="t-pri">
+                  <option value="3">높음</option><option value="2" selected>보통</option><option value="1">낮음</option>
+                </select></div>
+              <button type="submit">할 일 추가</button>
+            </form>
+            <ul id="task-list" class="item-list"></ul>
+          </article>
+        </div>
+
+        <section class="week-wrap" aria-labelledby="week-title">
+          <div class="week-head">
+            <h3 id="week-title">3. 이번 주 계획</h3>
+            <button id="plan-btn" type="button" class="primary">자동 배치</button>
+          </div>
+          <p id="status" role="status" class="status">시간표와 할 일을 입력한 뒤 자동 배치를 눌러 보세요.</p>
+          <div id="week" class="week"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">연락하기</h2>
+        <p>의견이나 개선 아이디어가 있다면 편하게 보내 주세요.</p>
+        <address>
+          <p>이메일: <a href="mailto:example@email.com">example@email.com</a></p>
+          <p>GitHub: <a href="https://github.com/" target="_blank" rel="noopener noreferrer">github.com/내아이디</a></p>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p><small>&copy; 2026 공강 매니저</small></p></div>
+  </footer>
+</body>
+</html>
